@@ -1,16 +1,16 @@
 <template>
   <div class="lava-container">
     <div class="lava" />
+    <div class="square" />
     <div class="lava" />
+    <div class="triangle" />
     <div class="lava" />
+    <div class="square" />
     <div class="lava" />
+    <div class="triangle" />
+    <div class="square" />
     <div class="lava" />
-    <div class="lava" />
-    <div class="lava" />
-    <div class="lava" />
-    <div class="lava" />
-    <div class="lava" />
-    <div class="lava" />
+    <div class="triangle" />
     <div class="lava" />
   </div>
 </template>
@@ -29,6 +29,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
   overflow: hidden;
 }
 
@@ -39,101 +40,114 @@ export default {
 }
 
 .lava:nth-child(1) {
-  width: 300px;
-  height: 300px;
-  position: absolute;
+  width: 200px;
+  height: 200px;
   left: 35%;
   top: 15%;
-  animation: lava-one ease-in-out 32s infinite, deform 3s ease-in-out alternate infinite;
+  animation: animation-one ease-in-out 54s infinite, deform 2s ease-in-out alternate infinite;
 }
 
-.lava:nth-child(2) {
-  width: 400px;
-  height: 400px;
+.square:nth-child(2) {
+  width: 200px;
+  height: 200px;
   position: absolute;
   right: 24%;
   bottom: 65%;
-  animation: lava-two ease-in-out 24s infinite, deform 4s ease-in-out alternate infinite;
+  background: #226b9b;
+  animation: animation-two ease-in-out 48s infinite;
 }
 
 .lava:nth-child(3) {
   width: 150px;
   height: 150px;
   bottom: -15%;
-  left: 34%;
-  animation: lava-three ease-in-out 32s infinite, deform 6s ease-in-out alternate infinite;
+  left: 50%;
+  animation: animation-three ease-in-out 54s infinite, deform 2s ease-in-out alternate infinite;
 }
 
-.lava:nth-child(4) {
-  width: 235px;
-  height: 235px;
+.triangle:nth-child(4) {
+  width: 0;
+  height: 0;
+  border-top: 130px solid #226b9b;
+  border-right: 270px solid transparent;
+  position: absolute;
   bottom: -19%;
   left: 30%;
-  animation: lava-four ease-in-out 24s infinite, deform 2s ease-in-out alternate infinite;
+  animation: animation-four ease-in-out 48s infinite;
 }
 
 .lava:nth-child(5) {
-  width: 235px;
-  height: 235px;
+  width: 125px;
+  height: 125px;
   bottom: -19%;
-  left: 30%;
-  animation: lava-five ease-in-out 32s infinite, deform 4s ease-in-out alternate infinite;
+  left: 45%;
+  animation: animation-five ease-in-out 54s infinite, deform 2s ease-in-out alternate infinite;
 }
 
-.lava:nth-child(6) {
+.square:nth-child(6) {
   width: 55px;
   height: 55px;
+  position: absolute;
   bottom: -25%;
-  left: 34%;
-  animation: lava-six ease-in-out 24s infinite, deform 6s ease-in-out alternate infinite;
+  left: 20%;
+  background: #226b9b;
+  animation: animation-six ease-in-out 48s infinite;
 }
 
 .lava:nth-child(7) {
   width: 35px;
   height: 35px;
-  bottom: -25%;
+  bottom: 25%;
   right: 34%;
-  animation: lava-seven ease-in-out 32s infinite, deform 4s ease-in-out alternate infinite;
+  animation: animation-seven ease-in-out 54s infinite, deform 2s ease-in-out alternate infinite;
 }
 
-.lava:nth-child(8) {
-  width: 435px;
-  height: 435px;
+.triangle:nth-child(8) {
+  width: 0;
+  height: 0;
+  border-bottom: 200px solid #226b9b;
+  border-left: 200px solid transparent;
+  position: absolute;
   bottom: -85%;
   right: 40%;
-  animation: lava-eight ease-in-out 24s infinite, deform 6s ease-in-out alternate infinite;
+  animation: animation-eight ease-in-out 48s infinite;
 }
 
-.lava:nth-child(9) {
+.square:nth-child(9) {
   width: 235px;
   height: 235px;
-  bottom: -15%;
+  position: absolute;
+  bottom: -5%;
   right: 10%;
-  animation: lava-nine ease-in-out 32s infinite, deform 2s ease-in-out alternate infinite;
+  background: #226b9b;
+  animation: animation-nine ease-in-out 54s infinite;
 }
 
 .lava:nth-child(10) {
   width: 135px;
   height: 135px;
   bottom: 12%;
-  right: 10%;
-  animation: lava-ten ease-in-out 24s infinite, deform 4s ease-in-out alternate infinite;
+  right: 15%;
+  animation: animation-ten ease-in-out 48s infinite, deform 4s ease-in-out alternate infinite;
 }
 
-.lava:nth-child(11) {
-  width: 500px;
-  height: 500px;
+.triangle:nth-child(11) {
+  width: 0;
+  height: 0;
+  border-top: 170px solid #226b9b;
+  border-left: 170px solid transparent;
+  position: absolute;
   bottom: 0%;
   left: 0%;
-  animation: lava-eleven ease-in-out 32s infinite, deform 2s ease-in-out alternate infinite;
+  animation: animation-eleven ease-in-out 54s infinite;
 }
 
 .lava:nth-child(12) {
-  width: 335px;
-  height: 335px;
+  width: 135px;
+  height: 135px;
   bottom: 20%;
   left: 20%;
-  animation: lava-twelve ease-in-out 24s infinite, deform 4s ease-in-out alternate infinite;
+  animation: animation-twelve ease-in-out 48s infinite, deform 4s ease-in-out alternate infinite;
 }
 
 @keyframes deform {
@@ -145,142 +159,156 @@ export default {
   }
 }
 
-@keyframes spin {
-  /* from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  } */
-}
-
-@keyframes scale {
-  /* 0% {
-    transform: scale(100%);
-  }
-
-  100% {
-    transform: scale(150%);
-  } */
-}
-
-@keyframes lava-one {
-  0%,
-  100% {
-    transform: translatey(0);
+@keyframes animation-one {
+  0% {
+    transform: translatey(0) scale(100%) rotate(0deg);
   }
   50% {
-    transform: translatey(700%);
+    transform: translatey(700%) scale(150%) rotate(180deg);
+  }
+  100% {
+    transform: translatey(0) scale(100%) rotate(360deg);
   }
 }
 
-@keyframes lava-two {
-  0%,
-  100% {
-    transform: translatey(0);
+@keyframes animation-two {
+  0% {
+    transform: translatey(0) scale(100%) rotate(0deg);
   }
   50% {
-    transform: translatey(420%);
+    transform: translatey(420%) scale(70%) rotate(180deg);
+  }
+  100% {
+    transform: translatey(0) scale(100%) rotate(360deg);
   }
 }
 
-@keyframes lava-three {
-  0%,
-  100% {
-    transform: translatey(0);
+@keyframes animation-three {
+  0% {
+    transform: translatey(0) scale(100%) rotate(0deg);
+  }
+  25% {
+    transform: translatey(-150%) scale(150%) rotate(90deg);
   }
   50% {
-    transform: translatey(-305%);
+    transform: translatey(-300%) scale(80%) rotate(180deg);
+  }
+  100% {
+    transform: translatey(0) scale(100%) rotate(360deg);
   }
 }
 
-@keyframes lava-four {
-  0%,
-  100% {
-    transform: translatey(0);
+@keyframes animation-four {
+  0% {
+    transform: translatey(0) scale(100%) rotate(0deg);
   }
   50% {
-    transform: translatey(-605%);
+    transform: translatey(-605%) scale(130%) rotate(180deg);
+  }
+  100% {
+    transform: translatey(0) scale(100%) rotate(360deg);
   }
 }
 
-@keyframes lava-five {
-  0%,
-  100% {
-    transform: translatey(0);
+@keyframes animation-five {
+  0% {
+    transform: translatey(0) scale(100%) rotate(0deg);
+  }
+  25% {
+    transform: translatey(-350%) scale(70%) rotate(90deg);
   }
   50% {
-    transform: translatey(-700%);
+    transform: translatey(-700%) scale(150%) rotate(180deg);
+  }
+  100% {
+    transform: translatey(0) scale(100%) rotate(360deg);
   }
 }
 
-@keyframes lava-six {
-  0%,
-  100% {
-    transform: translatey(0);
+@keyframes animation-six {
+  0% {
+    transform: translatey(0) scale(100%) rotate(0deg);
   }
   50% {
-    transform: translatey(-700%);
+    transform: translatey(-700%) scale(180%) rotate(180deg);
+  }
+  100% {
+    transform: translatey(0) scale(100%) rotate(360deg);
   }
 }
 
-@keyframes lava-seven {
-  0%,
-  100% {
-    transform: translatey(0);
+@keyframes animation-seven {
+  0% {
+    transform: translatey(0) scale(100%) rotate(0deg);
   }
   50% {
-    transform: translatey(-300%);
+    transform: translatey(-700%) scale(150%) rotate(180deg);
+  }
+  100% {
+    transform: translatey(0) scale(100%) rotate(360deg);
   }
 }
 
-@keyframes lava-eight {
-  0%,
-  100% {
-    transform: translatey(0);
+@keyframes animation-eight {
+  0% {
+    transform: translatey(0) scale(100%) rotate(0deg);
   }
   50% {
-    transform: translatey(-700%);
+    transform: translatey(-700%) scale(90%) rotate(180deg);
+  }
+  100% {
+    transform: translatey(0) scale(100%) rotate(360deg);
   }
 }
 
-@keyframes lava-nine {
-  0%,
-  100% {
-    transform: translatey(0);
+@keyframes animation-nine {
+  0% {
+    transform: translatey(0) scale(100%) rotate(0deg);
   }
   50% {
-    transform: translatey(200%);
+    transform: translatey(400%) scale(120%) rotate(180deg);
+  }
+  100% {
+    transform: translatey(0) scale(100%) rotate(360deg);
   }
 }
 
-@keyframes lava-ten {
-  0%,
-  100% {
-    transform: translatey(0);
+@keyframes animation-ten {
+  0% {
+    transform: translatey(0) scale(100%) rotate(0deg);
+  }
+  25% {
+    transform: translatey(-350%) scale(140%) rotate(90deg);
   }
   50% {
-    transform: translatey(-700%);
+    transform: translatey(-700%) scale(90%) rotate(180deg);
+  }
+  100% {
+    transform: translatey(0) scale(100%) rotate(360deg);
   }
 }
 
-@keyframes lava-eleven {
-  0%,
-  100% {
-    transform: translatey(0);
+@keyframes animation-eleven {
+  0% {
+    transform: translatey(0) scale(100%) rotate(0deg);
   }
   50% {
-    transform: translatey(200%);
+    transform: translatey(200%) scale(110%) rotate(180deg);
+  }
+  100% {
+    transform: translatey(0) scale(100%) rotate(360deg);
   }
 }
 
-@keyframes lava-twelve {
-  0%,
-  100% {
-    transform: translatey(0);
+@keyframes animation-twelve {
+  0% {
+    transform: translatey(0) scale(100%) rotate(0deg);
   }
   50% {
-    transform: translatey(-300%);
+    transform: translatey(-300%) scale(170%) rotate(180deg);
+  }
+  100% {
+    transform: translatey(0) scale(100%) rotate(360deg);
   }
 }
 </style>
